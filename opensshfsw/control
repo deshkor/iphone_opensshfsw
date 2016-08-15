@@ -1,0 +1,9 @@
+Package: none.opensshfsw
+Name: opensshfsw
+Depends: mobilesubstrate
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: An awesome MobileSubstrate tweak!
+Maintainer: deshkor
+Author: deshkor
+Section: Tweaks
