@@ -1,10 +1,16 @@
-export ARCHS = armv7 arm64
-export TARGET = iphone:clang:latest:9.0
-
 include $(THEOS)/makefiles/common.mk
 
-TWEAK_NAME = opensshfsw
-opensshfsw_FILES = Tweak.xm
-private_FRAMEWORKS = flipswitch
+BUNDLE_NAME = opensshfsw
+opensshfsw_FILES = Switch.xm
+opensshfsw_FRAMEWORKS = UIKit
+opensshfsw_LIBRARIES = flipswitch
+opensshfsw_INSTALL_PATH = /Library/Switches
 
-include $(THEOS_MAKE_PATH)/tweak.mk
+include $(THEOS_MAKE_PATH)/bundle.mk
+
+internal-stage::
+	#PreferenceLoader plist
+	$(ECHO_NOTHING)if [ -f Preferences.plist ]; then mkdir -p $(THEOS_STAGING_DIR)/Library/PreferenceLoader/Preferences/opensshfsw; cp Preferences.plist $(THEOS_STAGING_DIR)/Library/PreferenceLoader/Preferences/opensshfsw/; fi$(ECHO_END)
+
+after-install::
+	install.exec "killall -9 SpringBoard"
