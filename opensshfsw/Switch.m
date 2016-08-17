@@ -24,9 +24,14 @@ static NSString *nsNotificationString = @"none/preferences.changed";
 	return (enabled) ? FSSwitchStateOn : FSSwitchStateOff;
 }
 
+- (void)applyAlternateActionForSwitchIdentifier: (NSString *)switchIdentifier {
+    return;
+}
+
 - (void)applyState:(FSSwitchState)newState forSwitchIdentifier:(NSString *)switchIdentifier {
 	switch (newState) {
 	case FSSwitchStateIndeterminate:
+            // Add stuff to check if the service is up and return
 		break;
 	case FSSwitchStateOn:
 		[[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:YES] forKey:@"enabled" inDomain:nsDomainString];

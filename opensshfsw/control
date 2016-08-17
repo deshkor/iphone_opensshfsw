@@ -1,6 +1,6 @@
 Package: none
 Name: opensshfsw
-Description: A simple switch for the Flipswitch API!
+Description: A simple switch for OPENSSH
 Version: 0.0.1
 Priority: optional
 Section: Addons (Flipswitch)

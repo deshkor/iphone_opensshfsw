@@ -1,7 +1,7 @@
 include $(THEOS)/makefiles/common.mk
 
 BUNDLE_NAME = opensshfsw
-opensshfsw_FILES = Switch.xm
+opensshfsw_FILES = Switch.m
 opensshfsw_FRAMEWORKS = UIKit
 opensshfsw_LIBRARIES = flipswitch
 opensshfsw_INSTALL_PATH = /Library/Switches
