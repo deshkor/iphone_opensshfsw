@@ -31,7 +31,7 @@ static NSString *nsNotificationString = @"none/preferences.changed";
 
 - (void)applyState:(FSSwitchState)newState forSwitchIdentifier:(NSString *)switchIdentifier {
     NSTask *task = [[NSTask alloc] init];
-    
+
 	switch (newState) {
 	case FSSwitchStateIndeterminate:
             // Add stuff to check if the service is up and return
@@ -41,7 +41,7 @@ static NSString *nsNotificationString = @"none/preferences.changed";
 		CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter(), (CFStringRef)nsNotificationString, NULL, NULL, YES);
             
             [task setLaunchPath:@"/bin/bash"];
-            [task setArguments:@[@"-c", @"/usr/sbin/sshd"]];
+            [task setArguments:@[@"-c", @"/usr/bin/sudo /usr/sbin/sshd"]];
             [task launch];
             
 		break;
@@ -50,7 +50,7 @@ static NSString *nsNotificationString = @"none/preferences.changed";
 		CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter(), (CFStringRef)nsNotificationString, NULL, NULL, YES);
             
             [task setLaunchPath:@"/bin/bash"];
-            [task setArguments:@[@"-c", @"/usr/bin/killall sshd"]];
+            [task setArguments:@[@"-c", @"/usr/bin/sudo /usr/bin/killall sshd"]];
             [task launch];
             
 		break;

@@ -27,6 +27,6 @@
 	<key>NSPrincipalClass</key>
 	<string>opensshfswSwitch</string>
 	<key>alternate-action-url</key>
-	<string>prefs:</string>
+	<string>prefs:root=opensshfsw&amp;path=opensshfsw</string>
 </dict>
 </plist>
