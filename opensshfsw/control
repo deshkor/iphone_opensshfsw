@@ -1,4 +1,4 @@
-Package: none
+Package: opensshfsw
 Name: opensshfsw
 Description: A simple switch for OPENSSH
 Version: 0.0.1
