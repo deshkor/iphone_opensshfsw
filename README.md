@@ -4,7 +4,7 @@ Simple switch using [flipswitch library](https://github.com/a3tweaks/Flipswitch)
 
 ## Building and packing
 
-To build and pack it's necessary to have [Theos]() installed and configured in your machine.
+To build and pack it's necessary to have [Theos](https://github.com/theos/theos) installed and configured in your machine.
 
 After that, just run: `make package` and theos will compile, link, and pack everything into a *debian package*.
 
